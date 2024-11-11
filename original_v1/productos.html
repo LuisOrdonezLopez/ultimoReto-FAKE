@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Tienda Virtual - Productos</title>
+</head>
+<body>
+    <div id="loader" class="loader"></div>
+    <header class="header">
+        <div class="logo"><img src="images/logo.png" alt="Logo Tienda"></div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html">Tienda</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito (0)</a></li>
+            </ul>
+        </nav>
+        <button id="toggle-mode" class="toggle-button">Modo Oscuro</button>
+    </header>
+
+    <section class="productos">
+        <h2>Productos</h2>
+        <input type="text" id="search" class="search-input" placeholder="Buscar productos..." onkeyup="filtrarProductos()">
+        <div class="filtros">
+            <button class="filter-button" onclick="filtrarPorCategoria('ropa')">Ropa</button>
+            <button class="filter-button" onclick="filtrarPorCategoria('electronica')">Electrónica</button>
+            <button class="filter-button" onclick="filtrarPorCategoria('hogar')">Hogar</button>
+            <button class="filter-button" onclick="mostrarTodos()">Mostrar Todos</button>
+        </div>
+        <div class="grid-productos" id="productGrid">
+            <div class="producto" data-nombre="Producto 1" data-categoria="ropa">
+                <img src="images/producto1.jpg" alt="Producto 1">
+                <h3>Producto 1</h3>
+                <p>$10.00</p>
+                <button onclick="agregarAlCarrito({ nombre: 'Producto 1', precio: 10.00, imagen: 'images/producto1.jpg', cantidad: 1 })">Agregar al carrito</button>
+            </div>
+            <div class="producto" data-nombre="Producto 2" data-categoria="electronica">
+                <img src="images/producto2.jpg" alt="Producto 2">
+                <h3>Producto 2</h3>
+                <p>$20.00</p>
+                <button onclick="agregarAlCarrito({ nombre: 'Producto 2', precio: 20.00, imagen: 'images/producto2.jpg', cantidad: 1 })">Agregar al carrito</button>
+            </div>
+            <!-- Más productos -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2023 Tienda Virtual. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
