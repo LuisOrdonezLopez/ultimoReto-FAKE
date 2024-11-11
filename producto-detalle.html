@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    < ```html
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Tienda Virtual - Detalle del Producto</title>
+</head>
+<body>
+    <div id="loader" class="loader"></div>
+    <header class="header">
+        <div class="logo"><img src="images/logo.png" alt="Logo Tienda"></div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html">Tienda</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito (0)</a></li>
+            </ul>
+        </nav>
+        <button id="toggle-mode" class="toggle-button">Modo Oscuro</button>
+    </header>
+
+    <section class="detalle-producto">
+        <h2>Nombre del Producto</h2>
+        <div class="producto-info">
+            <div class="imagen-producto">
+                <img src="images/producto1.jpg" alt="Producto 1">
+                <div class="carrusel-imagenes">
+                    <img src="images/producto1_1.jpg" alt="Imagen 1">
+                    <img src="images/producto1_2.jpg" alt="Imagen 2">
+                </div>
+            </div>
+            <div class="info-producto">
+                <p>Descripción del producto aquí.</p>
+                <p>Precio: $10.00</p>
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+                <button onclick="agregarAlCarrito({ nombre: 'Nombre del Producto', precio: 10.00, imagen: 'images/producto1.jpg', cantidad: document.getElementById('cantidad').value })">Agregar al carrito</button>
+            </div>
+        </div>
+        <div class="descripcion-extendida">
+            <h3>Detalles Adicionales</h3>
+            <div class="tabs">
+                <button class="tablink" onclick="openTab(event, 'materiales')">Materiales</button>
+                <button class="tablink" onclick="openTab(event, 'cuidado')">Instrucciones de Cuidado</button>
+            </div>
+            <div id="materiales" class="tabcontent">
+                <p>Materiales del producto aquí.</p>
+            </div>
+            <div id="cuidado" class="tabcontent">
+                <p>Instrucciones de cuidado aquí.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2023 Tienda Virtual. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
